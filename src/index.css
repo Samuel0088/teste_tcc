@@ -19,6 +19,7 @@
   --secondary: var(--g6);
   --primary-dark: var(--g2);
   --primary-light: var(--g7);
+  --primary-glow: rgba(86, 168, 112, 0.4);
   --light-green: var(--g8);
   --background: var(--cream);
   --text-dark: var(--ink);

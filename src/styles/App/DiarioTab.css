@@ -58,7 +58,8 @@
   display: flex;
   gap: 16px;
   padding: 16px;
-  background: rgba(18, 22, 28, 0.6);
+  background: #f7f5f0;
+  box-shadow: 0 10px 30px var(--primary-glow);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
@@ -305,7 +306,8 @@
 .diario-empty {
   text-align: center;
   padding: 60px 20px;
-  background: rgba(18, 22, 28, 0.6);
+  background: #f7f5f0;
+  box-shadow: 0 10px 30px var(--primary-glow);
   border-radius: 28px;
 }
 

@@ -425,13 +425,13 @@
    CARD DE IMAGEM + ABAS
    ============================================================ */
 .imagemCard {
-  background: linear-gradient(135deg, var(--n-card), rgba(18, 22, 28, 0.6));
+  background: #f7f5f0;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--n-border);
   border-radius: var(--n-r-lg);
   overflow: hidden;
-  box-shadow: var(--n-shadow);
+  box-shadow: 0 10px 30px var(--primary-glow);
   position: relative;
 }
 
@@ -523,13 +523,13 @@
    PAINEL DE MÉTRICAS
    ============================================================ */
 .painelMetricas {
-  background: linear-gradient(135deg, var(--n-card), rgba(18, 22, 28, 0.6));
+  background: #f7f5f0;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--n-border);
   border-radius: var(--n-r-lg);
   overflow: hidden;
-  box-shadow: var(--n-shadow);
+  box-shadow: 0 10px 30px var(--primary-glow);
 }
 
 .painelCabecalho {
