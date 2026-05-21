@@ -310,7 +310,6 @@ export default function Profile() {
         <ProfileTabs 
           activeTab={activeTab}
           onTabChange={setActiveTab}
-          onEditClick={() => setEditing(true)}
         />
 
         <AlertMessage type={alertMessage.type} text={alertMessage.text} />

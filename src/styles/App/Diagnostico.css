@@ -51,7 +51,7 @@
   z-index: 1;
   max-width: 600px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 80px;
+  padding: 1rem 1.5rem 80px;
   width: 100%;
   box-sizing: border-box;
   min-height: 100vh;
@@ -666,7 +666,7 @@
 
 @media (max-width: 768px) {
   .diagnostic-container {
-    padding: 1.5rem 1rem 70px;
+    padding: 1rem 1rem 70px;
   }
   
   .diagnostic-header h2 {
@@ -1000,6 +1000,7 @@
 
 .section-link span {
   font-size: 18px;
+  color: inherit;
 }
 
 /* Lista de Histórico */
@@ -1021,6 +1022,7 @@
   border-radius: 16px;
   transition: all 0.2s;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .history-item:hover {
@@ -1047,6 +1049,7 @@
 
 .history-info {
   flex: 1;
+  min-width: 0;
 }
 
 .history-name {
@@ -1054,6 +1057,10 @@
   font-weight: 600;
   color: var(--primary);
   margin-bottom: 4px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .history-date {
@@ -1063,7 +1070,11 @@
 
 .history-confidence {
   text-align: right;
-  min-width: 70px;
+  flex: 0 0 72px;
+  min-width: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .confidence-value {
@@ -1085,6 +1096,34 @@
   height: 100%;
   background: linear-gradient(90deg, var(--g5), var(--g6));
   border-radius: 2px;
+}
+
+.show-more-history-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(45, 97, 64, 0.06);
+  border: 1px solid var(--border-strong);
+  border-radius: 30px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.show-more-history-btn:hover {
+  background: rgba(45, 97, 64, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.show-more-history-btn span {
+  font-size: 20px;
 }
 
 /* Tips Card */
@@ -1149,7 +1188,8 @@
 /* ===== HEADER ===== */
 .diagnostic-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-top: 8px;
+  margin-bottom: 42px;
   position: relative;
 }
 
@@ -1202,7 +1242,7 @@
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 480px) {
   .diagnostic-container {
-    padding: 24px 16px;
+    padding: 12px 16px 70px;
   }
 
   .diagnostic-header h1 {

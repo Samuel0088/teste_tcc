@@ -29,7 +29,7 @@
   --background-dark: #0a0a0f;
   --background-darker: #050508;
   --background-card: #f7f5f0;
-  --text-primary: #ffffff;
+  --text-primary: var(--g1);
   --text-secondary: #b0c4de;
   --text-muted: #6c7a8a;
   --glass-border: rgba(255, 255, 255, 0.06);
@@ -392,6 +392,13 @@ body {
   color: var(--primary);
 }
 
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
 .stat-value {
   font-size: 28px;
   font-weight: 800;
@@ -399,6 +406,7 @@ body {
   line-height: 1.2;
   margin-bottom: 4px;
 }
+
 
 .action-btn.primary,
 .action-btn.primary span {
@@ -503,15 +511,24 @@ body {
 }
 
 .tab-tech.active {
-  color: #000;
+  color: #fff;
+}
+
+.tab-tech.active span {
+  color: #fff;
 }
 
 .tab-tech.active::before {
   opacity: 1;
 }
 
+.tab-tech:not(.active),
+.tab-tech:not(.active) span {
+  color: var(--g1);
+}
+
 .tab-tech:not(.active):hover {
-  color: var(--text-primary);
+  color: var(--g1);
   background: var(--primary-soft);
 }
 
@@ -555,7 +572,7 @@ body {
 
 .action-btn.primary {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #000;
+  color: #fff;
   border: none;
 }
 
@@ -566,6 +583,10 @@ body {
 
 .action-btn.danger {
   border-color: rgba(255, 71, 87, 0.3);
+  color: var(--danger);
+}
+
+.action-btn.danger span {
   color: var(--danger);
 }
 
@@ -728,7 +749,46 @@ body {
 .card-header h3 {
   font-size: 20px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--g1);
+}
+
+.card-header h3.personal-info-title {
+  color: var(--g4);
+}
+
+.edit-card .card-header h3 {
+  color: var(--g4);
+}
+
+.farm-edit-card {
+  color: var(--g1);
+}
+
+.farm-edit-card .card-header {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+}
+
+.farm-edit-card .card-header h3,
+.farm-edit-card .input-label,
+.farm-edit-card .input-group,
+.farm-edit-card .tech-input,
+.farm-edit-card .tech-select,
+.farm-edit-card .tech-select option {
+  color: var(--g1) !important;
+  -webkit-text-fill-color: var(--g1) !important;
+}
+
+.farm-edit-card .tech-input::placeholder,
+.farm-edit-card .tech-select::placeholder {
+  color: var(--g1);
+  -webkit-text-fill-color: var(--g1);
+  opacity: 1;
+}
+
+.farm-edit-card .edit-form-actions {
+  margin-top: 0;
+  margin-bottom: 4px;
 }
 
 .header-line {
@@ -763,7 +823,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--text-secondary);
+  color: var(--g1);
   font-size: 14px;
   font-weight: 500;
 }
@@ -774,7 +834,7 @@ body {
 }
 
 .info-value {
-  color: var(--text-primary);
+  color: var(--g1);
   font-size: 14px;
   font-weight: 600;
   padding: 6px 16px;
@@ -896,6 +956,10 @@ body {
   gap: 14px;
 }
 
+.edit-farm-btn span {
+  color: inherit;
+}
+
 /* ================= ICON SELECTOR ================= */
 .icon-selector-tech {
   margin-bottom: 28px;
@@ -907,7 +971,7 @@ body {
   gap: 10px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--g1);
   margin-bottom: 18px;
 }
 
@@ -964,8 +1028,26 @@ body {
 .input-label {
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--g1);
   letter-spacing: 0.5px;
+}
+
+.edit-card .input-group > .material-symbols-outlined {
+  color: var(--g1);
+}
+
+.edit-card .form-fields,
+.edit-card .input-group,
+.edit-card .info-note,
+.edit-card .info-note p {
+  color: var(--g1);
+}
+
+.edit-card .tech-input,
+.edit-card .tech-select,
+.edit-card .tech-select option {
+  color: var(--g1) !important;
+  -webkit-text-fill-color: var(--g1) !important;
 }
 
 .tech-input,
@@ -976,10 +1058,30 @@ body {
   box-shadow: 0 10px 30px var(--primary-glow);
   border: 2px solid var(--glass-border);
   border-radius: 16px;
-  color: var(--text-primary);
+  color: var(--g1);
   font-size: 14px;
   font-family: 'Inter', sans-serif;
   transition: all 0.3s ease;
+}
+
+.tech-input:disabled,
+.tech-select:disabled {
+  color: var(--g1);
+  -webkit-text-fill-color: var(--g1);
+  opacity: 1;
+}
+
+.tech-input::placeholder,
+.tech-select::placeholder {
+  color: var(--g1);
+  -webkit-text-fill-color: var(--g1);
+  opacity: 1;
+}
+
+.tech-input::-webkit-input-placeholder {
+  color: var(--g1);
+  -webkit-text-fill-color: var(--g1);
+  opacity: 1;
 }
 
 .tech-input:focus,

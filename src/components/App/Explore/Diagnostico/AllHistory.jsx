@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "../../../../styles/App/AllHistory.css"
 
-export default function AllHistory() {
+export default function AllHistory({ onBack }) {
   const navigate = useNavigate()
   const [history, setHistory] = useState([])
   const [filteredHistory, setFilteredHistory] = useState([])
@@ -12,6 +12,8 @@ export default function AllHistory() {
 
   // Carregar histórico do localStorage
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" })
+
     const saved = localStorage.getItem("diagnosticHistory")
     if (saved) {
       const parsedHistory = JSON.parse(saved)
@@ -110,7 +112,7 @@ export default function AllHistory() {
     <div className="all-history-container">
       {/* Header */}
       <div className="history-header">
-        <button className="back-button" onClick={() => navigate(-1)}>
+        <button className="back-button" onClick={onBack || (() => navigate(-1))}>
           <span className="material-symbols-outlined">arrow_back</span>
         </button>
         <h1>Histórico de Diagnósticos</h1>
@@ -232,7 +234,7 @@ export default function AllHistory() {
             ) : (
               <p>Realize seu primeiro diagnóstico tirando uma foto ou selecionando da galeria</p>
             )}
-            <button className="new-diagnostic-btn" onClick={() => navigate(-1)}>
+            <button className="new-diagnostic-btn" onClick={onBack || (() => navigate(-1))}>
               <span className="material-symbols-outlined">add</span>
               Novo diagnóstico
             </button>
