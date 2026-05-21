@@ -164,7 +164,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  cursor: pointer;
+  cursor: default;
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
   margin-bottom: 24px;
   text-align: center;
@@ -229,6 +229,62 @@
   border: 1px solid var(--n-border);
   position: relative;
   z-index: 1;
+}
+
+.uploadAcoes {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.uploadAcao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 9px 16px;
+  background: var(--g4);
+  border: none;
+  border-radius: 14px;
+  color: var(--g9);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--n-font);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.uploadAcao:hover:not(:disabled) {
+  background: var(--g5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(45, 97, 64, 0.3);
+}
+
+.uploadAcao:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.uploadAcao span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.uploadAcaoSecundaria {
+  background: rgba(45, 97, 64, 0.06);
+  border: 1px solid var(--border-strong);
+  color: var(--g4);
+}
+
+.uploadAcaoSecundaria:hover:not(:disabled) {
+  background: rgba(45, 97, 64, 0.1);
+  color: var(--g5);
+  border-color: var(--g5);
 }
 
 .uploadInputOculto {

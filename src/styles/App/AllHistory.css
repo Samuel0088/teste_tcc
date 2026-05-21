@@ -462,12 +462,13 @@
 }
 
 .delete-item-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: rgba(255, 71, 87, 0.12);
-  border: 1px solid rgba(255, 71, 87, 0.4);
-  color: #ff4757;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: rgba(255, 107, 107, 0.2) !important;
+  border: 1px solid #ff6b6b !important;
+  color: #ff6b6b !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -477,13 +478,15 @@
 }
 
 .delete-item-btn:hover {
-  background: rgba(255, 71, 87, 0.22);
-  border-color: #ff4757;
+  background: rgba(255, 107, 107, 0.28);
+  border-color: #ff4d4d;
+  color: #ff4d4d;
   transform: scale(1.05);
 }
 
 .delete-item-btn span {
-  font-size: 18px;
+  font-size: 16px;
+  color: inherit !important;
 }
 
 /* Empty State */
@@ -527,28 +530,32 @@
   margin-bottom: 24px;
 }
 
-.new-diagnostic-btn {
+.empty-state .new-diagnostic-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, var(--g6), #0066ff);
+  gap: 6px;
+  min-height: 38px;
+  padding: 8px 16px;
+  background: var(--g4);
   border: none;
-  border-radius: 30px;
-  color: #0a2a1a;
-  font-size: 14px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
 }
 
-.new-diagnostic-btn:hover {
+.empty-state .new-diagnostic-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(86, 168, 112, 0.3);
+  background: var(--g4);
+  box-shadow: 0 5px 20px rgba(45, 97, 64, 0.3);
 }
 
-.new-diagnostic-btn span {
-  font-size: 20px;
+.empty-state .new-diagnostic-btn span {
+  font-size: 18px;
+  color: inherit;
+  margin-bottom: 0;
 }
 
 /* Responsividade */
