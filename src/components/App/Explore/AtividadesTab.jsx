@@ -20,6 +20,20 @@ export default function AtividadesTab() {
     responsible: ""
   })
 
+  useEffect(() => {
+    const menuBars = document.querySelectorAll(".nav, .menu-bar")
+
+    menuBars.forEach((menuBar) => {
+      menuBar.style.display = showForm || selectedActivity ? "none" : ""
+    })
+
+    return () => {
+      menuBars.forEach((menuBar) => {
+        menuBar.style.display = ""
+      })
+    }
+  }, [showForm, selectedActivity])
+
   // Tipos de atividade
   const activityTypes = [
     { id: "tarefa", name: "Tarefa", icon: "assignment", color: "#56a870" },

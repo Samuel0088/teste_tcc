@@ -1747,6 +1747,7 @@ body {
 
 .explore-tab-icon {
   font-size: 20px;
+  color: inherit;
   transition: all 0.2s ease;
 }
 
@@ -1759,24 +1760,24 @@ body {
 .explore-tab:hover {
   background: rgba(86, 168, 112, 0.1);
   border-color: rgba(86, 168, 112, 0.3);
-  color: #fff;
+  color: var(--g4);
   transform: translateY(-1px);
 }
 
 .explore-tab:hover .explore-tab-icon {
   transform: scale(1.05);
-  color: blue;
+  color: inherit;
 }
 
 /* Active state */
 .explore-tab.active {
   background: linear-gradient(135deg, rgba(86, 168, 112, 0.15), rgba(0, 102, 255, 0.1));
   border-color: rgba(86, 168, 112, 0.4);
-  color: #fff;
+  color: var(--g4);
 }
 
 .explore-tab.active .explore-tab-icon {
-  color: var(--g6);
+  color: inherit;
 }
 
 /* Responsividade */

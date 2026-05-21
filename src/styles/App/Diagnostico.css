@@ -1436,6 +1436,7 @@
 
 .empty-action span {
   font-size: 18px;
+  color: inherit;
 }
 
 @media (max-width: 480px) {

@@ -24,7 +24,7 @@
   --success: var(--g6);
   --background: #f7f5f0;
   --icon: var(--g5);
-  --information-card: #696e6e;
+  --information-card: var(--g4);
   
   --neon-shadow: 0 0 20px rgba(86, 168, 112, 0.3);
   --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -380,6 +380,7 @@ body {
   background: linear-gradient(#F8FAFA);
   border-radius: 24px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .farm-info-card::after {
@@ -665,13 +666,13 @@ body {
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--background-dark);
+  color: var(--g1);
 }
 
 .card-sublabel {
   display: block;
   font-size: 11px;
-  color: var(--background-dark);
+  color: var(--g1);
 }
 
 .card-main {
@@ -685,7 +686,7 @@ body {
 .card-value {
   font-size: 36px;
   font-weight: 700;
-  color: var(--background-dark);
+  color: var(--g1);
   line-height: 1;
 }
 
@@ -1017,10 +1018,10 @@ body {
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: none;
+  background: var(--g5) !important;
   border: 1px solid var(--glass-border);
   border-radius: 30px;
-  color: var(--text-secondary);
+  color: var(--background) !important;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -1147,7 +1148,7 @@ body {
 .activity-title {
   font-size: 15px;
   font-weight: 600;
-  color: var(--background-dark);
+  color: var(--g1);
 }
 
 .activity-time {
@@ -1254,6 +1255,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
+  color: var(--g1);
 }
 
 .empty-state p {
@@ -1420,6 +1422,7 @@ body {
 .explore-label {
   font-size: 13px;
   font-weight: 600;
+  color: var(--g1);
 }
 
 .explore-sublabel {
@@ -1970,4 +1973,3 @@ body {
 .activity-card:hover .icon-pulse {
   opacity: 0.5;
 }
-
