@@ -49,6 +49,47 @@ body {
   background: #f8f9fa;
 }
 
+.accessibility-text-controls {
+  position: fixed;
+  right: 14px;
+  bottom: 66px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  background: #f7f5f0;
+  border: 1px solid rgba(45, 97, 64, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(15, 35, 24, 0.22);
+}
+
+.accessibility-text-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--g4);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.accessibility-text-controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.accessibility-text-controls span {
+  max-width: 92px;
+  color: var(--g1);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+
 #root {
   width: 100%;
   min-height: 100vh;
