@@ -2,7 +2,8 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { auth } from "../../services/firebase"
 import { signInWithEmailAndPassword } from "firebase/auth"
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaMicrosoft } from "react-icons/fa"
+import { FcGoogle } from "react-icons/fc"
 import "../../styles/App/Login.css"
 
 export default function Login({ setAppLoading }) {
@@ -50,7 +51,7 @@ export default function Login({ setAppLoading }) {
     if (!email || !password) {
       setAlertMessage({ 
         type: "error", 
-        text: "Preencha todos os campos para entrar na fazenda! 🌾" 
+        text: "Preencha todos os campos para acessar sua conta." 
       })
       return
     }
@@ -69,7 +70,7 @@ export default function Login({ setAppLoading }) {
 
       setAlertMessage({ 
         type: "success", 
-        text: `Bem-vindo de volta, produtor! 🚁` 
+        text: "Bem-vindo de volta."
       })
 
       // 🔥 ATIVA A SPLASH
@@ -81,23 +82,23 @@ export default function Login({ setAppLoading }) {
       }, 2000)
 
     } catch (error) {
-      let errorMessage = "Erro na autenticação. Verifique seus dados! 🌧️"
+      let errorMessage = "Erro na autenticação. Verifique seus dados."
 
       switch (error.code) {
         case 'auth/user-not-found':
-          errorMessage = "Usuário não encontrado! Parece que você ainda não plantou sua conta. 🌱"
+          errorMessage = "Usuário não encontrado. Crie uma conta para começar."
           break
         case 'auth/wrong-password':
-          errorMessage = "Senha incorreta! Verifique e tente novamente. 🔒"
+          errorMessage = "Senha incorreta. Verifique e tente novamente."
           break
         case 'auth/invalid-email':
-          errorMessage = "Email inválido! Digite um email válido. 📧"
+          errorMessage = "Email inválido. Digite um email válido."
           break
         case 'auth/too-many-requests':
-          errorMessage = "Muitas tentativas! Aguarde um momento para tentar novamente. ⏳"
+          errorMessage = "Muitas tentativas. Aguarde um momento para tentar novamente."
           break
         case 'auth/network-request-failed':
-          errorMessage = "Erro de conexão! Verifique sua internet. 🌐"
+          errorMessage = "Erro de conexão. Verifique sua internet."
           break
         default:
           errorMessage = "Erro ao fazer login. Tente novamente mais tarde."
@@ -117,27 +118,26 @@ export default function Login({ setAppLoading }) {
 
   return (
     <div className="login-container">
-      <div className="login-background-layer login-background-layer-1"></div>
-      <div className="login-background-layer login-background-layer-2"></div>
-      <div className="login-background-overlay"></div>
-      <div className="login-gradient-sphere login-gradient-sphere-1"></div>
-      <div className="login-gradient-sphere login-gradient-sphere-2"></div>
-      <div className="login-grid-pattern"></div>
-
-      <div className="login-card">
-        <div className="login-header">
-          <h2>Login</h2>
-          <p className="login-subtitle">
-            Acesse sua propriedade rural 
-          </p>
+      <section className="login-hero">
+        <div className="login-hero-overlay"></div>
+        <img className="login-logo" src="/assets/image/Logo.png" alt="Zenith" />
+        <div className="login-hero-copy">
+          <p>Gestão rural inteligente</p>
+          <h1>Entrar</h1>
         </div>
+      </section>
+
+      <section className="login-panel">
+        <div className="login-curve"></div>
+        <div className="login-side-text">Precisão agrícola para sua fazenda.</div>
+        <div className="login-bottom-shape"></div>
 
         <div className="login-form">
           <div className="input-group-login">
             <label>Email</label>
             <input
               type="email"
-              placeholder="seu@email.com"
+              placeholder="seuemail@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onKeyPress={handleKeyPress}
@@ -153,13 +153,14 @@ export default function Login({ setAppLoading }) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Sua Senha"
+                placeholder="Sua senha"
                 disabled={loading}
               />
               <button 
                 type="button"
                 onClick={togglePasswordVisibility}
                 className="password-toggle-btn"
+                aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
               >
                 {showPassword ? <FaEye style={{color: '#56a870'}} /> : <FaEyeSlash style={{color: '#56a870'}} />}
               </button>
@@ -203,14 +204,25 @@ export default function Login({ setAppLoading }) {
         </div>
 
         <div className="login-divider">
-          <span>OU</span>
+          <span>Ou</span>
         </div>
 
         <div className="register-link">
           <span>Primeira vez aqui?</span>
-          <a href="/register">Criar Conta 🌱</a>
+          <a href="/register">Criar conta</a>
         </div>
-      </div>
+
+        <div className="social-login">
+          <button type="button" className="social-login-btn">
+            <span className="social-icon google"><FcGoogle /></span>
+            Entre com Google
+          </button>
+          <button type="button" className="social-login-btn">
+            <span className="social-icon outlook"><FaMicrosoft /></span>
+            Entre com Outlook
+          </button>
+        </div>
+      </section>
     </div>
   )
 }

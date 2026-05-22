@@ -94,7 +94,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--background-darker);
+  background: #f7f5f0;
   z-index: 9999;
 }
 
@@ -108,7 +108,7 @@ body {
   width: 100px;
   height: 100px;
   margin: 0 auto 32px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: var(--g6);
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -119,16 +119,16 @@ body {
 
 .profile-loading-logo span {
   font-size: 56px;
-  color: #000;
+  color: var(--g1);
 }
 
 .profile-loading-logo-glow {
   position: absolute;
   inset: -6px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: rgba(86, 168, 112, 0.45);
   border-radius: 36px;
-  opacity: 0.4;
-  filter: blur(15px);
+  opacity: 0.5;
+  filter: blur(18px);
   z-index: -1;
   animation: pulse 2s ease-in-out infinite;
 }
@@ -148,6 +148,13 @@ body {
   animation: dots 1.5s steps(4, end) infinite;
 }
 
+.profile-loading-content p {
+  color: var(--g1);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
 @keyframes dots {
   0%, 20% { content: ''; }
   40% { content: '.'; }
@@ -157,7 +164,7 @@ body {
 
 .profile-loading-subtitle {
   font-size: 12px;
-  color: var(--text-muted);
+  color: var(--g4);
   margin-top: 12px;
 }
 

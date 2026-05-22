@@ -49,11 +49,45 @@ body {
   background: #f8f9fa;
 }
 
-.accessibility-text-controls {
+.accessibility-widget {
   position: fixed;
-  right: 14px;
-  bottom: 66px;
+  top: 76px;
+  left: calc(100vw - 60px);
   z-index: 10000;
+}
+
+.accessibility-widget.hidden {
+  display: none;
+}
+
+.accessibility-toggle {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(45, 97, 64, 0.25);
+  border-radius: 50%;
+  background: var(--g4);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(15, 35, 24, 0.22);
+  cursor: grab;
+  touch-action: none;
+}
+
+.accessibility-toggle:active {
+  cursor: grabbing;
+}
+
+.accessibility-toggle .material-symbols-outlined {
+  color: #fff;
+  font-size: 26px;
+}
+
+.accessibility-panel {
+  position: absolute;
+  top: 54px;
+  right: 0;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -64,25 +98,25 @@ body {
   box-shadow: 0 12px 28px rgba(15, 35, 24, 0.22);
 }
 
-.accessibility-text-controls button {
-  min-width: 44px;
-  min-height: 44px;
+.accessibility-panel button {
+  min-width: 38px;
+  min-height: 38px;
   border: 0;
-  border-radius: 14px;
+  border-radius: 12px;
   background: var(--g4);
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 800;
   cursor: pointer;
 }
 
-.accessibility-text-controls button:disabled {
+.accessibility-panel button:disabled {
   opacity: 0.45;
   cursor: default;
 }
 
-.accessibility-text-controls span {
-  max-width: 92px;
+.accessibility-panel span {
+  min-width: 54px;
   color: var(--g1);
   font-size: 0.75rem;
   font-weight: 700;

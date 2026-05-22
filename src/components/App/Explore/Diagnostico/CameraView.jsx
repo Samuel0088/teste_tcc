@@ -27,7 +27,7 @@ export default function CameraView({ videoRef, onCapture, onCancel }) {
   }, [isMobile, size.width, size.height, isInitialized])
 
   useEffect(() => {
-    const hiddenElements = document.querySelectorAll(".nav, .menu-bar, .app-header, .explore-header")
+    const hiddenElements = document.querySelectorAll(".nav, .menu-bar, .app-header, .explore-header, .accessibility-widget")
 
     hiddenElements.forEach((element) => {
       element.style.display = "none"
